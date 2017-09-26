@@ -1,11 +1,5 @@
-var data = [{"tree":"two"},{"orange":"elm"}];
-for (var x =0; x<data.length; x++){
-  var obj = data[x];
-  for (var prop in obj){
-    console.log(x + ":" + obj[prop]);
-  }
-}
-/*var data = [
+//var data = [{"tree":"two two", "plant":"5"},{"orange":"elm"}];
+data = [
   {
     "stream": {
       "mature": false,
@@ -107,5 +101,11 @@ for (var x =0; x<data.length; x++){
     "status": 404,
     "message": "Channel 'not-a-valid-account' does not exist"
   }
-]
-*/
+];
+
+for (var x =0; x<data.length; x++){
+  var obj = data[x];
+  for (var prop in obj){
+    console.log(x + ":" + obj[prop]);
+  }
+}
