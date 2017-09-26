@@ -102,10 +102,19 @@ data = [
     "message": "Channel 'not-a-valid-account' does not exist"
   }
 ];
-
+var myArr = [];
 for (var x =0; x<data.length; x++){
   var obj = data[x];
   for (var prop in obj){
+    if (prop == "stream"){
+      if(obj[prop] == null){
+        myArr.push("no stream");
+      }
+      else if (typeof obj[prop] == "object"){
+        myArr.push(obj[prop]["game"]);
+      }
+    }
     console.log(x + ":" + obj[prop]);
   }
+  console.log(myArr);
 }
