@@ -1,4 +1,11 @@
-var FAKEDATA = [
+var data = [{"tree":"two"},{"orange":"elm"}];
+for (var x =0; x<data.length; x++){
+  var obj = data[x];
+  for (var prop in obj){
+    console.log(x + ":" + obj[prop]);
+  }
+}
+/*var data = [
   {
     "stream": {
       "mature": false,
@@ -101,3 +108,4 @@ var FAKEDATA = [
     "message": "Channel 'not-a-valid-account' does not exist"
   }
 ]
+*/
