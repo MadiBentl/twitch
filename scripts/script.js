@@ -106,15 +106,13 @@ var myArr = [];
 for (var x =0; x<data.length; x++){
   var obj = data[x];
   for (var prop in obj){
-    if (prop == "stream"){
-      if(obj[prop] == null){
-        myArr.push("no stream");
-      }
-      else if (typeof obj[prop] == "object"){
-        myArr.push(obj[prop]["game"]);
-      }
+    if (prop == "display_name"){
+      $("#streamable-content").append("<div id='stream${x}'>" + obj["display_name"] +"</div>");
+    }
+    if (prop == "stream" && obj["stream"] != null){
+      $("#streamable-content").append("<div id='stream${x}'>" + obj["stream"]["display_name"] +"</div>");
     }
     console.log(x + ":" + obj[prop]);
   }
-  console.log(myArr);
+
 }
