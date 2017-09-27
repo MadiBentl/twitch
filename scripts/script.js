@@ -117,5 +117,17 @@ for (var x =0; x<data.length; x++){
     }
     console.log(x + ":" + obj[prop]);
   }
+}
 
+var showAll = function(){
+  $(".online").removeClass("hidden");
+  $(".offline").removeClass("hidden");
+}
+var showOn = function(){
+  $(".online").removeClass("hidden");
+  $(".offline").addClass("hidden");
+}
+var showOff = function(){
+  $(".online").addClass("hidden");
+  $(".offline").removeClass("hidden");
 }
