@@ -107,12 +107,12 @@ for (var x =0; x<data.length; x++){
   var obj = data[x];
   for (var prop in obj){
     if (prop == "display_name"){
-      $("#streamable-content").append("<div class='offline' id='stream"+x+"'><h2>" + obj["display_name"] +"</h2></div>");
+      $("#streamable-content").append("<a href='"+obj["_links"]["self"] +"'><div class='offline' id='stream"+x+"'><h2>" + obj["display_name"] +"</h2></div>");
       $("#stream" + x).append("<p>Offline</p>");
     }
     if (prop == "stream" && obj["stream"] != null){
-      $("#streamable-content").append("<div class='online' id='stream"+x+"'><h2>" + obj["stream"]["display_name"] +"</h2></div>");
-      $("#stream" + x).append("<p>Online</p>");
+      $("#streamable-content").append("<a href='"+obj["stream"]["_links"]["self"]+"'<div class='online' id='stream"+x+"'><h2>" + obj["stream"]["display_name"] +"</h2></div>");
+      $("#stream" + x).append("<h3>"+ obj["stream"]["game"] + "</h3>").append("<p>Online</p>");
 
     }
     console.log(x + ":" + obj[prop]);
